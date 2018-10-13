@@ -1,0 +1,31 @@
+Montagem de devices
+
+Para montagem de arquivos FAT32:
+
+mount /dev/* /mnt/* -t vfat
+
+Detalhes do arquivo. Exemplo /dev/*
+
+file -s /dev/*
+
+
+Alterar Label de uma partição
+
+$ sudo parted /dev/sdb
+(parted) mklabel msdos
+(parted) quit
+
+mkfs -t ext4 -q /dev/sdb1
+
+mkdir /newdisk
+mount /dev/sdb1 /newdisk
+
+/dev/sdb1 /newdisk ext4 defaults 0 2
+
+ZERA UMA Partição
+
+dd if=/dev/zero of=/dev/mmcblk0p1
+
+Checa o filesystem
+
+fsck /dev/*
