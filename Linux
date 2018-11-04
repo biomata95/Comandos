@@ -1,0 +1,213 @@
+teste
+testes
+man -t ifconfig | ps2pdf - ifconfig.pdf
+man -t ifconfig | ps2pdf - ifconfig.pdf <- salvar algum manual em PDF
+rm -f arquivo.txt <- remover arquivo forca
+rm -rf arquivo.txt <- remover diretorio a forca
+ln -s /root/Documentos/arquivo.txt linkArquivo <- Link para arquivo
+killall firefox <- mata o processo firefox pelo nome
+ssh usuario@host <- conecta a algum servidor
+ssh -p porta usuario@host <- conecta a algum servidor com porta
+ssh-copy-id usuario@host <- conecta a com senha para ativar login de servidores
+grep -r 2 comandos.txt <- pesquisa pela sequencia nos arquivos
+grep -r 2 /root/Documentos <- pesquisa pela sequencia nos diretorios
+lsusb | grep Intel <- procura no comando a palavra chave apos o grep
+uptime <- exibe o tempo de atividade do sistema
+w <- quem esta logado
+finger <- informacoes do usuario
+uname -a <- informacoes do kernel
+cat /proc/cpuinfo <- informacoes da CPU
+cat /proc/meminfo <- informacoes da memoria
+cat df <- uso do disco
+du /root <- espaco de um diretorio no disco
+whereis grep <- localizacao do aplicativo
+whois 192.168.0.0 <- informacoes sobre um dominio
+dig 192.168.0.0 <- retorna informacoes do DNS para o dominio
+dig -x 192.168.0.0 <- retorno reverso para um host do DNS de um dominio
+arch <- arquitetura da maquina
+uname -r <- versao do kernel
+dmidecode -q <- componentes do hardware
+hdparm -i /dev/sda <- caracteristicas do disco rigido
+hdparm -iT /dev/sda <- teste de leitura no disco rigido
+cat /proc/interrupts <- exibe interrupcoes
+cat /proc/net/dev <- estatisticas e adaptadores de rede
+cat /proc/mounts <- filesystems montados
+
+
+
+shutdown -h now
+Desliga o sistema (1).
+
+shutdown -h minutos
+Desliga o sistema de acordo com o minuto selecionado (EX.: shutdown -h 30 , desliga em 30 minutos).
+
+init 0
+Desliga o sistema (2).
+
+telinit 0
+Desliga o sistema (3).
+
+halt
+Desliga o sistema (4).
+
+shutdown -r mensagem:
+Para enviar uma mensagem aos usuários afetados pelo desligamento, use o comando desta forma: sudo
+
+shutdown -r 30 "O sistema será reiniciado em 30 minutos”
+
+shutdown -c
+Cancela um desligamento do sistema planejado.
+
+shutdown -r now
+Reinicia (1).
+
+reboot
+Reinicia (2).
+
+logout
+Fecha a sessão.
+
+ls *[0-9]* <- arquivos que contem numeros 
+mkdir -p teste/teste2 <- cria arvore de diretorios
+iconv -l <- Lista cifras conhecidas
+find /root/Documentos -name arquivo1.txt <- procura arquivo no sistema
+find / -user root <- buscar arquivos de determinado usuario
+find /root/Documentos -name \*pdf <- buscar arquivos de determinada extensao
+find /root/Documentos/ -name \*.txt <- buscar arquivos de determinada extensao
+find /usr/bin -type f -atime +10 <- procura arquivos binarias nao usados nos ultimos 10 dias
+find /root/Documentos/ -type f -mtime -5 <- arquivos alterados nos ultimos 5 dias
+locate \*.sh <- busca todos os arquivos .sh
+mount -o loop file.iso /mnt/cdrom <- monta .iso 
+mount -t vfat /dev/hda5 /mnt/hda5 <- monta FAT32 
+groupadd nome_do_grupo <- cria grupo
+groupdel nome_do_grupo <- exclui grupo
+groupmod -n novo_nome_do_grupo viejo_nome_do_novo_grupo <- exclui grupo
+groupmod -n novo_nome_do_grupo viejo_nome_do_novo_grupo <- renomeia grupo
+useradd -c “Name Surname ” -g admin -d /home/user1 -s /bin/bash user1 <- cria novo usuario admin do grupo 
+useradd user1 <- cria usuario
+userdel -r user1 <- deleta usuario
+usermod -c “User FTP” -g system -d /ftp/user1 -s /bin/nologin user1 <- altera atribuicoes do usuario
+chage -E 2016-06-22 user1 <- limite de tempo para a senha do usuario
+
+
+
+chgrp group1 file1
+Altera o grupo de arquivos.
+
+chown user1
+Grupo1 arquivo1
+
+find / -perm -u+s
+Ver todos os arquivos com sistema SUID configurado.
+
+chmod u+s /bin/file1
+Define o bit SUID em um arquivo binário. O usuário que está executando esse arquivo adquire os mesmos
+privilégios como proprietário.
+
+chmod u-s /bin/file1
+Desabilita o bit SUID em um arquivo binário.
+
+chmod g+s /home/public
+Define o SGID bit em um diretório – semelhante ao SUID, mas para o diretório.
+
+chmod g-s /home/public
+Desativa o bit SGID em um diretório.
+
+chmod o+t /home/public
+Conjunto STIKY bit em um diretório. Permite a exclusão de arquivos somente para os legítimos
+proprietários.
+
+chmod o-t /home/public
+Desativa STIKY bit em um diretório.
+
+
+chattr +a file1
+Permite gravar apenas abrindo um arquivo acrescentar modo.
+
+chattr +c file1
+Permite que um arquivo a ser compactado / descompactado automaticamente.
+
+chattr +d file1
+Ele garante que o programa ignore excluir os arquivos durante o backup.
+
+chattr +i file1
+Torna o arquivo inalterado, portanto não pode ser excluído, alterado, renomeado ou vinculado.
+
+chattr +s file1
+Permite que um arquivo possa ser excluído com segurança.
+
+chattr +S file1
+Ele garante que um arquivo é modificado, as alterações são gravadas no modo síncrono, como com a
+sincronia.
+18
+chattr +u file1
+Ele permite que você recuperar o conteúdo de um arquivo, mesmo se está cancelado.
+
+lsattr
+Exibe atributos especiais.
+
+tail -f test.txt <- alteracao em tempo real de arquivos
+sed 's/teste/beleza/g' test.txt > test1.txt <- troca a palavra teste por beleza do arquivo test.txt e depois salva o alterado em outro arquivo
+ sed '/^$/d' <- remove linhas em branco
+ sed '/^$/d'test.txt <- remove linhas em branco
+sed -e '1d' test.txt  <- primeira linha
+sed -n '/brasil/p' test.txt  <- exibe onde tem a palavra brasil
+dos2unix test.txt  <- convert arquivo de dos para unix 
+unix2dos test.txt  <- unix para dos 
+ recode ..HTML <test.txt> page.html <- converte de txt para html
+badblocks -v /dev/sda5 <- verificar blocos defeituosos 
+fsck /dev/sda5 <- repara / verifica o disco 
+fsck.vfat /dev/sda5 <- repara / verifica o disco 
+fsck.msdos /dev/sda5 <- repara / verifica o disco 
+mkfs /dev/sda5 <- verifica blocos defeituosos, nao esta montado 
+dump -0aj -f bash.bak ../Bash-Shell <- faz um backup
+dump -1aj -f bash.bak ../Bash-Shell <- faz um backup incremental
+rsync -rogpav –delete /home /tmp <- sincronizacao de diretorio atraves do rsync
+rsync -rogpav -e ssh -delete /home endereco_ip <- sincronizacao de diretorio atraves do rsync com o tunel SSH
+dd bs=1M if=/dev/hda | gzip | ssh user@ip_addr ‘dd of=hda.gz’
+dd bs=1M if=/dev/hda | gzip | ssh user@ip_addr ‘dd of=hda.gz’ <- backup de um disco rigido de um host remoto atraves do ssh
+dd if=/dev/sda of=/tmp/file1 <- salva o conteudo do disco rigido em um arquivo
+( cd /tmp/local/ && tar c . ) | ssh -C user@ip_addr ‘cd /home/share/ && tar x -p’ <- copia o conteudo de um diretorio para outro via ssh
+( tar c /home ) | ssh -C user@ip_addr ‘cd /home/backup-home && tar x -p’ <- copia de um diretorio local em um diretorio remoto via ssh
+ifconfig eth0 promisc <- configura eth0 para sniffing
+dhclient eth0 <- ativa eth0 oara modo dhcp
+route -n <- tela de rota
+route add -net 0/0 gw IP_Gateway <- configura entrada padrao
+route add -net 192.168.0.0 netmask 255.255.0.0 gw 192.168.1.1 <- configura uma rota estatica para encontrar 192.168.0.0/16
+route del 0/0 gw IP_gateway <- remove a rota estatica
+host www.exemplo.com <- encontrar IP do dominio
+nslookup www.exemplo.com <- encontra o nome do host
+ip link show <- status da interface
+ethtool eth0 <- estatisticas da placa ethernet
+netstat -tup <- EXIBE TODAS AS CONEXOES DE REDE ATIVA E SEU PID
+netstat -tupl <- exibe os ouvintes de rede de servicos sobre o sistema e seu PID
+tcpdump tcp port 80 <- trafego http
+iwlist scan <- lista rede sem fio
+whois www.example.com.br <- pesquisa base de dados whois
+iptables -t filter -L <- exibe todas as correntes na tabela de filtro
+iptables -t nat -L <- exibe todas as correntes na tabela nat
+iptables -t filter -F <- limpa regras da tabela de filtro
+iptables -t nat -F <- limpa regras da tabela nat
+iptables -t filter -X <- limpa qualquer cadeia criada pelo usuario
+iptables -t filter -A INPUT -p tcp –dport telnet -j ACCEPT <- permite conexoes telnet entrar
+iptables -t filter -A OUTPUT -p tcp –dport http -j DROP <- bloqueia conexoes HTTP de saida
+iptables -t filter -A FORWARD -p tcp –dport pop3 -j ACCEPT <- permite conexoes POP para uma cadeia de frente
+iptables -t filter -A INPUT -j LOG –log-prefix “DROP INPUT” <- registra uma sequencia de entrada
+iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE <- configura um PAT na eth0, escondendo os pacotes de saida de coacao
+ps -eafw <- exibe as tarefas do linux
+ps -e -o pid,args –forest <- exibe as tarefas do linux de forma hierarquica
+pstree <- arvore de processos do sistemas
+lsof -p 1203 <- exibe uma lista de arquivos abertos por processos
+lsof /root <- exibe lista de arquivos abetos de um determinado caminho
+strace -c ls >/dev/null <- exibe o sistema de chamadas feitas e recebidas por um processo
+watch -n1 'cat /proc/interrupts' <- exibe interrupcoes em tempo real
+last reboot <- ultimas reinicializacoes do sistema
+lsmod <- exibe o kernel carregado
+smartctl -A /dev/sda <- monitora confiabilidade do disco rigido pelo SMART
+dmesg <- eventos no processo de carregamento do kernel
+messages <- eventos do sistema
+apropos ..who <- util quando nao se lembra direito do nome do programa
+whatis ..who <- o que o programa faz
+whatis ifconfig <- o que o programa faz
+echo wget -c www.example.com/files.iso | at 09 <- baixa um arquivo as 9 a.m
+ /sbin/service iptables save <- salvar regras do iptables
