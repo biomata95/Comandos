@@ -1,0 +1,21 @@
+1. No diretorio local onde voce quer passar seus arquivos faca:
+	git init
+
+2. Depois faca um commit
+	git remote add origin https://github.com/biomata95/repositorio.git
+
+3. Depois 
+	git add .(diretorio corrente)
+
+4. Depois
+	git commit -m "first commit"
+
+5. Depois
+	git fetch origin master:tmp
+	git rebase tmp
+	git push origin HEAD:master
+
+
+
+#git branch -D tmp  -> DELETE O temporario com os arquivos
+
