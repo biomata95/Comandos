@@ -148,3 +148,4 @@ echo wget -c www.example.com/files.iso | at 09 <- baixa um arquivo as 9 a.m
 su --login usuario <- acessar outro login
 mount -o loop disk1.iso /mnt/disk <- montar CD's principalmente ISO9660, iso
 file -Ls /dev/sr0 <- detalhes de um filesystem
+python -m SimpleHTTPServer 8000 <- Montar um simples servidor HTTP dentro de um diretório, indicando a porta
