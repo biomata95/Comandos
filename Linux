@@ -149,3 +149,5 @@ su --login usuario <- acessar outro login
 mount -o loop disk1.iso /mnt/disk <- montar CD's principalmente ISO9660, iso
 file -Ls /dev/sr0 <- detalhes de um filesystem
 python -m SimpleHTTPServer 8000 <- Montar um simples servidor HTTP dentro de um diretório, indicando a porta
+tcptrack -i eth0 <- Monitoramento do trafrego TCP
+
