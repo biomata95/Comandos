@@ -151,4 +151,5 @@ file -Ls /dev/sr0 <- detalhes de um filesystem
 python -m SimpleHTTPServer 8000 <- Montar um simples servidor HTTP dentro de um diretório, indicando a porta
 tcptrack -i eth0 <- Monitoramento do trafrego TCP
 mkfs.ext4 -S /dev/sdb1 <- correção filesystem
+sync; echo 1 > /proc/sys/vm/drop_caches <- LIMPAR MEMÓRIA INUTILIZADA *****
 
