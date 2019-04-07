@@ -152,4 +152,5 @@ python -m SimpleHTTPServer 8000 <- Montar um simples servidor HTTP dentro de um 
 tcptrack -i eth0 <- Monitoramento do trafrego TCP
 mkfs.ext4 -S /dev/sdb1 <- correção filesystem
 sync; echo 1 > /proc/sys/vm/drop_caches <- LIMPAR MEMÓRIA INUTILIZADA *****
+watch -n0.1 ls <- listar diretorio em tempo real de 100ms em 100ms
 
