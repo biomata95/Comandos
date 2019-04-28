@@ -156,3 +156,5 @@ watch -n0.1 ls <- listar diretorio em tempo real de 100ms em 100ms
 curl ipinfo.io/*.*.*.* <- RETORNA INFORMAÇÕES GEOGRÁFICAS DE UM IP
 tracepath ????.com <- traceroute mais simples
 findsmb <- encontra máquinas conectadas pelo samba
+alsactl restore <- reiniciar audio
+
