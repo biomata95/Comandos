@@ -159,4 +159,5 @@ findsmb <- encontra máquinas conectadas pelo samba
 alsactl restore <- reiniciar audio
 $ sed 's/$'"/`echo \\\r`/" input.txt > output.txt  <- ***Mudar formato UNIX para DOS de arquivo texto ***
 strings arquivo_binario <- lista conteudos de texto em um arquivo binario
-objdump arquivo_binario <- lista conteudos de texto em um arquivo binario
+objdump arquivo_binario -s <- lista conteudos de texto em um arquivo binario
+objdump arquivo_binario -d <- lista os códigos assembly do binario
