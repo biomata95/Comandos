@@ -1,0 +1,5 @@
+Sequência de comandos para configurar banco de dados postgres com o usuário postgres
+
+sudo su - postgres
+psql
+alter user postgres with password 'SENHA';
